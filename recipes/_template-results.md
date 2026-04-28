@@ -1,22 +1,26 @@
-# Recipe: [project name]
+# Run: [project name] — YYYY-MM-DD
 
-> **One-line summary:** what was built and why anyone would want it.
+> **One-line summary:** what was built in this run, by whom, with what variations from the canonical recipe.
+
+This is a **case study** — a single run of a recipe. The reusable playbook lives in the parent recipe directory's `README.md`. This file is the falsifiable evidence that the recipe ran end-to-end on a specific date with a specific operator.
 
 | Field | Value |
 |---|---|
-| Status | Draft / Tested / Shipped |
+| Recipe | [recipe name](../README.md) |
+| Status | Shipped / Failed / Aborted |
 | Date | YYYY-MM-DD |
 | Operator | [name] |
-| Project repo | (link if public) |
-| Plugins exercised | great-X, great-Y, great-Z |
+| Project repo | (link if public; otherwise local path) |
+| Plugins loaded in session | great-X, great-Y, great-Z |
 | Substitutions | (e.g., "Sara Blakely substituted for Cagan when great-designers wasn't installed") |
 | Time to ship | ~X hours |
+| Final artifacts | (paths or links) |
 
 ---
 
-## Why this recipe matters
+## Why this run mattered
 
-What pattern does this recipe demonstrate? What would someone NOT learn by skipping it? Be specific to *this* project — generic claims about the constellation belong in the constellation README, not in a recipe.
+What did this specific run demonstrate that previous runs didn't (if it's not the first run)? Be specific to *this* run — the recipe-level reusable patterns belong in the parent README.md, not here.
 
 ---
 
@@ -130,12 +134,16 @@ The honest pass. Each item should be specific enough that the next operator avoi
 
 ---
 
-## Reusable patterns
+## Patterns to fold back into the recipe
 
-Distill 1-3 patterns from this recipe that generalize. These are the takeaways for someone running a different project tomorrow.
+If this run surfaced patterns that should make the recipe better — pitfalls to add, variations to document, common mistakes to warn about — list them here. After this run is filed, update the parent `README.md` (the recipe playbook) to reflect the lessons. The recipe gets sharper run by run.
 
 ---
 
 ## Source materials
 
-Links to the project's PRD, the per-phase artifacts, the actual git commits. The recipe should be falsifiable — a reader should be able to inspect the actual evidence, not just trust the narrative.
+Links to the project's PRD, the per-phase artifacts, the actual git commits. Every run is falsifiable — a reader should be able to inspect the actual evidence, not just trust the narrative.
+
+Suggested layout:
+- `screenshots/` — visual proof of the ship
+- `artifacts/` — copies or links to PRD.md, discovery.md, debate.md, plan.md, etc.

@@ -1,47 +1,35 @@
 # Great Minds Cookbook
 
-Recipes for working with the [Great Minds constellation](https://github.com/sethshoultes/great-minds-constellation) — concrete walkthroughs of using named-figure personas to do real work.
+Recipes for working with the [Great Minds constellation](https://github.com/sethshoultes/great-minds-constellation) — reusable playbooks for using named-figure personas to do real work.
 
-Each recipe answers one question: **how would the constellation actually build this?**
+Each recipe answers one question: **how would the constellation actually build this kind of thing?**
 
-## What's a recipe
+## Recipes vs. runs — the distinction that matters
 
-A recipe is a documented walkthrough of a real project built using the constellation. Not a tutorial, not a marketing piece — a retro of an actual run. Each recipe captures:
+This cookbook separates two different artifacts:
 
-- **The brief** — what was asked for, in customer voice
-- **Discovery** — what risks the constellation surfaced before building (Cagan in `great-designers`, or Sara Blakely in `great-minds` if discovery is led founder-style)
-- **Debate** — where Steve Jobs / Elon Musk / Phil Jackson stake positions on scope and approach
-- **Plan** — Phil Jackson's dispatch list: who builds what, in what order
-- **Build** — the parallel dispatches, with each persona's actual output captured verbatim
-- **Assembly** — what the operator (the human) did to integrate the parallel outputs
-- **QA** — Margaret Hamilton's verdict + the fixes
-- **Review** — Steve Jobs's final ship/no-ship call
-- **Retro** — what worked, what broke, what the recipe taught us about the dispatch pattern for next time
+| | Recipe | Run |
+|---|---|---|
+| **What it is** | A reusable playbook. Step-by-step instructions you (the reader) follow in your own Claude Code session. | A case study. The actual outputs, screenshots, and retro from one specific time the recipe was run. |
+| **Lives at** | `recipes/<name>/README.md` | `recipes/<name>/runs/YYYY-MM-DD.md` |
+| **Updated when** | The recipe pattern itself improves (better dispatch templates, new pitfalls surfaced, variations documented). | A new run of the recipe is captured. |
+| **Read this when** | You want to *build* something using the constellation. | You want *evidence* the recipe works, or to learn from a specific run's failures and wins. |
 
-Recipes are real. Not idealized. If a dispatch returned slop, the recipe says so. If a persona was substituted for an unavailable one, the recipe explains why and what was lost.
+The recipe is the playbook. The run is the proof.
 
-## Why a cookbook
-
-The constellation is ~111 personas across 10 plugins. Knowing *which* personas to dispatch for *which* phase of work is the operator's job — and a hard one if you're new. Recipes show the patterns:
-
-- Which plugins compose well for which kinds of project
-- What a *self-contained brief* looks like for each persona
-- Where parallel dispatch saves time vs. where serial review is required
-- What happens when you swap one persona for another (Hemingway vs. Vonnegut for copy; Cagan vs. Sara Blakely for discovery)
-
-The cookbook is the constellation's manual for using itself.
+This pattern is modeled on [Anthropic's claude-cookbooks](https://github.com/anthropics/claude-cookbooks) — instructions you can walk through and execute, not retrospectives you read about.
 
 ## Recipes
 
-### Shipped
+### Shipped (read these — runs prove they work)
 
-| Recipe | Project type | Plugins exercised | Shipped |
+| Recipe | Project type | Plugins exercised | First shipped |
 |---|---|---|---|
-| [regex-explainer](recipes/regex-explainer.md) | Single-page static tool — paste a regex, get plain-English explanation + test panel | great-minds, great-engineers, great-authors (great-designers via Jony substitute) | 2026-04-28 |
+| [regex-explainer](recipes/regex-explainer/) | Single-page static developer tool | great-minds, great-engineers, great-designers, great-authors | [2026-04-28](recipes/regex-explainer/runs/2026-04-28.md) |
 
 ### Queued
 
-These recipes are committed to ship in the next phase. Each tests a different shape — not another small static tool.
+These recipes are committed for the next phase. Each tests a different shape — not another small static tool.
 
 | # | Recipe | Project type | Plugins to exercise | Why this recipe |
 |---|---|---|---|---|
@@ -58,34 +46,63 @@ These recipes are committed to ship in the next phase. Each tests a different sh
 
 ### Considered and rejected
 
-| # | Recipe | Why rejected |
-|---|---|---|
-| — | Launch Plan | Would just confirm great-marketers works for copy — doesn't surface new failure modes in the constellation's coordination layer |
-| — | Philosophical Inquiry | The "appears rigorous while being shallow" failure mode is unverifiable without a domain expert. The cookbook's load-bearing claim is recipes ship and are evaluable; this one isn't. |
+| Recipe | Why rejected |
+|---|---|
+| Launch Plan | Would just confirm great-marketers works for copy — doesn't surface new failure modes in the constellation's coordination layer |
+| Philosophical Inquiry | The "appears rigorous while being shallow" failure mode is unverifiable without a domain expert. The cookbook's load-bearing claim is recipes ship and are evaluable; this one isn't. |
 
-## Recipe template
+## Templates
 
-When writing a new recipe, start from [`recipes/_template.md`](recipes/_template.md). It enforces the section structure so recipes are comparable.
+When writing a new recipe or capturing a new run, start from the templates:
+
+- [`recipes/_template-recipe.md`](recipes/_template-recipe.md) — the playbook template (one of these per recipe folder)
+- [`recipes/_template-results.md`](recipes/_template-results.md) — the run / case study template (one of these per run, in `runs/`)
+
+Both enforce structure so recipes are comparable.
 
 ## Testing recipes
 
-A recipe isn't done until it's been **run end-to-end**. The build the recipe describes must actually ship. Recipes that haven't been tested are marked clearly. Untested recipes are aspirational; tested recipes are evidence.
+A recipe isn't done until it's been **run end-to-end**. The build the recipe describes must actually ship.
+
+- **Recipes that have at least one shipped run** are evidence — the playbook works.
+- **Recipes with no runs yet** are aspirational — they're documented intent, not yet validated.
+- **Failed runs are valuable** — file them under `runs/` with `Status: Failed`. The patterns of failure are what make the recipe sharper.
+
+Every shipped run should include screenshots or another concrete artifact in `runs/<date>/screenshots/` so the proof is inspectable, not just narrated.
+
+## Recipe folder layout
+
+```
+recipes/
+├── README.md                                # this file (or one level up)
+├── _template-recipe.md                      # playbook template
+├── _template-results.md                     # case study template
+└── <recipe-name>/
+    ├── README.md                            # THE RECIPE — the playbook
+    └── runs/
+        ├── YYYY-MM-DD.md                    # one case study per run
+        └── YYYY-MM-DD/
+            └── screenshots/                 # visual proof
+```
+
+A recipe folder always has its own `README.md` (the playbook) and a `runs/` directory.
 
 ## Contributing
 
 The cookbook is curated. To propose a recipe:
 
-1. Run a real project through the constellation
-2. Capture each phase's dispatch + output as you go (this is the bulk of the work)
-3. Write up the retro using the template
-4. Open a PR
+1. Pick a project shape that exercises the constellation in a way no existing recipe does
+2. Run the project end-to-end through the constellation, capturing each phase's dispatch + output
+3. Write the **recipe** (`recipes/<name>/README.md`) using the template — that's the playbook
+4. Write the **run** (`recipes/<name>/runs/YYYY-MM-DD.md`) using the run template — that's the case study from your specific build
+5. Open a PR
 
-What makes a recipe useful is the honesty about what broke, not the polish on what worked.
+What makes a recipe useful is the honesty about what broke and the specificity of the dispatch templates, not the polish of the prose.
 
 ## Related
 
-- [Great Minds Constellation](https://github.com/sethshoultes/great-minds-constellation) — the marketplace + plugins
-- The brain learning [`agency-operator-must-redirect-not-pinch-hit`](https://github.com/sethshoultes/brain/blob/main/learnings/agency-operator-must-redirect-not-pinch-hit.md) — when to file a recipe issue vs. when to fix it inline
+- [Great Minds Constellation](https://github.com/sethshoultes/great-minds-constellation) — the marketplace + plugins this cookbook documents
+- The brain learning [`agency-operator-must-redirect-not-pinch-hit`](https://github.com/sethshoultes/brain/blob/main/learnings/agency-operator-must-redirect-not-pinch-hit.md) — when the constellation fails, file an issue, don't pinch-hit
 
 ## License
 
