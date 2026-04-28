@@ -33,11 +33,35 @@ The cookbook is the constellation's manual for using itself.
 
 ## Recipes
 
-*(None shipped yet — first recipe in progress)*
+### Shipped
 
-| Recipe | Project type | Plugins exercised | Status |
+| Recipe | Project type | Plugins exercised | Shipped |
 |---|---|---|---|
-| [regex-explainer](recipes/regex-explainer.md) | Single-page static tool | great-minds, great-engineers, great-designers, great-authors | In progress |
+| [regex-explainer](recipes/regex-explainer.md) | Single-page static tool — paste a regex, get plain-English explanation + test panel | great-minds, great-engineers, great-authors (great-designers via Jony substitute) | 2026-04-28 |
+
+### Queued
+
+These recipes are committed to ship in the next phase. Each tests a different shape — not another small static tool.
+
+| # | Recipe | Project type | Plugins to exercise | Why this recipe |
+|---|---|---|---|---|
+| 2 | Book Proposal | Publisher-ready 4-6K word nonfiction proposal incl. sample chapter | great-minds, great-authors, great-publishers, great-marketers, great-researchers | Tests great-publishers in *editorial-judgment* mode (not just design); stresses great-authors at production prose quality |
+| 3 | Decision Memo | 2-3K word memo with three perspectives + dissent on a real business decision | great-minds, great-counsels, great-researchers, great-operators, great-marketers | Tests *integrative* multi-plugin synthesis (recipe #1 was additive); reconciles disagreement into one coherent doc |
+| 4 | OKR Set | Quarterly OKR document from a fuzzy annual goal | great-minds, great-operators, great-researchers, great-counsels | Tests structured constraint satisfaction; broadly applicable; LOW risk |
+
+### Backlog
+
+| # | Recipe | Why deferred |
+|---|---|---|
+| 5 | Film Treatment | great-filmmakers as primary creative engine — interesting but not the highest-leverage next test |
+| 6 | Research Brief | Universal upstream artifact — useful, but quality is hard to evaluate without domain expertise |
+
+### Considered and rejected
+
+| # | Recipe | Why rejected |
+|---|---|---|
+| — | Launch Plan | Would just confirm great-marketers works for copy — doesn't surface new failure modes in the constellation's coordination layer |
+| — | Philosophical Inquiry | The "appears rigorous while being shallow" failure mode is unverifiable without a domain expert. The cookbook's load-bearing claim is recipes ship and are evaluable; this one isn't. |
 
 ## Recipe template
 
