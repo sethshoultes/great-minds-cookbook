@@ -367,8 +367,9 @@ This is operator work. Per Phil's assembly notes:
 5. **Wire the JS** — explain button → `explainRegex`, test button → `testRegex`, input change → `validatePattern`, flavor change → `flavorWarning`.
 6. **Smell-test before QA:**
    - Paste `^([a-z]+)\d{2,4}$`, select Python flavor, submit, paste `hello42` as test string
-   - Explanation reads naturally; flavor warning does NOT fire (no lookbehind, no `\s\w\d` Unicode concern); test returns match + 1 capture group
-   - If clean → ready for Margaret's QA
+   - Explanation reads naturally; test returns match + 1 capture group with value `hello`
+   - **Note:** the flavor warning DOES fire in this configuration (Python's `\d` is Unicode-aware; JS's is ASCII). The original recipe predicted no warning; that prediction was wrong. The warning firing is correct behavior — verify the *prose* and the *match*, not the warning state.
+   - If the explanation reads cleanly and the match shape is right → ready for Margaret's QA
 
 ---
 
@@ -405,8 +406,9 @@ Specifically test:
 - Anchors (^, $, \b)
 - Character classes (literal, ranges, [^...], \d, \w, \s)
 - Quantifiers (*, +, ?, {n}, {n,m}, greedy vs. lazy)
-- Capturing vs. non-capturing groups
+- Capturing vs. non-capturing groups (numbered AND named — verify named-group labels survive duplicate captured values, e.g. `(?<a>[a-z]+)-(?<b>[a-z]+)` against `foo-foo`)
 - Alternation (|)
+- Quantified zero-width assertions (e.g. `(?=foo)+`) — the engine must not claim repetition; lookarounds are zero-width
 - Flags (g, i, m, s, u, y)
 - Edge cases: empty pattern, invalid pattern, very long pattern
 - The flavor warning logic (lookbehinds + Python flavor)
@@ -468,10 +470,13 @@ Optionally take screenshots — the canonical run captured `final-ship-state.png
 ## Common pitfalls
 
 - **Skipping the operator decision point (Step 3).** Discovery surfaces a real tension; if you don't resolve it explicitly, the build phase will silently pick a side and you'll discover the wrong choice in QA. **Fix:** always append the operator decision to `discovery.md` before dispatching debate.
-- **Sending Phil's plan to the build personas as references instead of verbatim text.** Sub-agents can't "see" your conversation. They need the literal brief in the prompt. **Fix:** copy-paste from `plan.md` into each Agent dispatch.
+- **Sending Phil's plan to the build personas as references instead of verbatim text.** Sub-agents can't "see" your conversation. They need the literal brief in the prompt. **Fix:** copy-paste from `plan.md` into each Agent dispatch. If `plan.md` itself says "see the conversation above" instead of including the brief text, that's a bug in Phil's output — re-prompt for the literal text before dispatching.
 - **Doing assembly before reading Carmack's output shape.** If Carmack's prose paragraph is 15 lines and Norman's design assumes 4, the page breaks. **Fix:** Phil's assembly notes are in priority order — read Carmack's output FIRST, reconcile shape mismatches, then touch HTML.
 - **Dispatching Margaret with source-only access.** Margaret should be able to actually run the tool to find runtime bugs, not just read code. **Fix:** include the absolute path to `index.html` in the QA brief; have Margaret run smoke tests via her dispatched session if she has a Bash tool.
 - **Not capturing screenshots.** A working build is the proof point of the recipe. Screenshots take 30 seconds and make the run inspectable for anyone.
+- **Reflexively deferring persona disagreements to "the spec".** Hemingway's copy and Norman's UX spec disagreed on the multi-line toggle (single label vs. stateful idle/active labels). The right call was operator judgment, not blind deference. **Fix:** when two personas disagree at assembly time and there's no Phil-style mediator, name the trade-off in the run notes and pick deliberately. Don't pick by default-to-spec.
+- **Suppressing security-hook warnings instead of rewriting.** When the security hook warns about `innerHTML` or pattern-matched words like `exec`, treat it as a prompt to use unambiguously safe DOM methods (`createElement`/`textContent`) — not as a false positive to silence. The hook can't see your sanitization; the rewrite documents safety in the code itself. **Fix:** rewrite, don't annotate.
+- **Treating Phil's smell-test predictions as load-bearing.** Phil sometimes predicts subsidiary behaviors (e.g., "no flavor warning fires") that turn out to be wrong on his own terms. The smell test exists to verify the *core* outcome (explanation reads naturally, match shape is correct). Subsidiary behaviors are evidence to interpret, not assertions to confirm. **Fix:** verify the procedure works; don't fail the test because a side-state didn't match Phil's prediction.
 
 ---
 
