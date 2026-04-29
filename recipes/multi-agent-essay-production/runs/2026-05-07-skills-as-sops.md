@@ -131,9 +131,9 @@ These are queued for the next run, not blockers.
 
 - Recipe README: [`../README.md`](../README.md)
 - The post: [Skills as SOPs](https://sethshoultes.com/blog/skills-as-sops.html)
-- Brain learning that captures the recipe: [`multi-agent-essay-production-recipe.md`](https://github.com/sethshoultes/brain/blob/main/learnings/multi-agent-essay-production-recipe.md)
+- Brain learning that captures the recipe: [`multi-agent-essay-production-recipe.md`](https://github.com/sethshoultes/building-with-ai-brain/blob/main/learnings/multi-agent-essay-production-recipe.md)
 - Foundational learnings:
-  - [`orchestrator-and-writer-are-different-ai-roles`](https://github.com/sethshoultes/brain/blob/main/learnings/orchestrator-and-writer-are-different-ai-roles.md)
-  - [`distinct-editor-personas-converge-on-real-craft-problems`](https://github.com/sethshoultes/brain/blob/main/learnings/distinct-editor-personas-converge-on-real-craft-problems.md)
-  - [`sub-agent-briefs-must-be-self-contained`](https://github.com/sethshoultes/brain/blob/main/learnings/sub-agent-briefs-must-be-self-contained.md)
+  - [`orchestrator-and-writer-are-different-ai-roles`](https://github.com/sethshoultes/building-with-ai-brain/blob/main/learnings/orchestrator-and-writer-are-different-ai-roles.md)
+  - [`distinct-editor-personas-converge-on-real-craft-problems`](https://github.com/sethshoultes/building-with-ai-brain/blob/main/learnings/distinct-editor-personas-converge-on-real-craft-problems.md)
+  - [`sub-agent-briefs-must-be-self-contained`](https://github.com/sethshoultes/building-with-ai-brain/blob/main/learnings/sub-agent-briefs-must-be-self-contained.md)
 - Visual-direction reference: HeyGen's [`liveavatar-agent-skills`](https://github.com/heygen-com/liveavatar-agent-skills) — pattern source for the SKILL.md format the post is announcing.

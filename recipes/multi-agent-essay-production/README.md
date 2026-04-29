@@ -274,8 +274,8 @@ The recursion this enables: the recipe's diagnostic prompt produces the upgrades
 | Post | Author | Observation | What we did with it |
 |---|---|---|---|
 | Skills as SOPs | Orwell | "a wrong skill executes the wrong thing in every session that calls it, without complaint, at full speed" | Became the post's load-bearing close. |
-| The Recipe That Wrote Itself | Vonnegut | "the seed must be a claim, not a topic" | Folded into [the brain learning's *hidden prerequisite* section](https://github.com/sethshoultes/brain/blob/main/learnings/multi-agent-essay-production-recipe.md). |
-| What's on the Desk | King | "tools are nouns, lifecycle hooks are verbs" | Became its own brain learning: [hooks-as-temporal-grammar-of-tool-systems](https://github.com/sethshoultes/brain/blob/main/learnings/hooks-as-temporal-grammar-of-tool-systems.md). |
+| The Recipe That Wrote Itself | Vonnegut | "the seed must be a claim, not a topic" | Folded into [the brain learning's *hidden prerequisite* section](https://github.com/sethshoultes/building-with-ai-brain/blob/main/learnings/multi-agent-essay-production-recipe.md). |
+| What's on the Desk | King | "tools are nouns, lifecycle hooks are verbs" | Became its own brain learning: [hooks-as-temporal-grammar-of-tool-systems](https://github.com/sethshoultes/building-with-ai-brain/blob/main/learnings/hooks-as-temporal-grammar-of-tool-systems.md). |
 
 Without this step, the insight only lives in the published prose. With it, the insight becomes reusable across projects and future sessions.
 
@@ -321,7 +321,7 @@ The voice flattens. Per `[orchestrator-and-writer-are-different-ai-roles]` in th
 ## Companion artifacts
 
 - **Skill (Agent Skill format):** [`set-up-claude-code-with-brain-vault`](https://github.com/sethshoultes/building-with-ai-skills/blob/main/skills/set-up-claude-code-with-brain-vault/SKILL.md) — sister skill (the brain vault is where the source learnings for this recipe live).
-- **Brain learning:** [`multi-agent-essay-production-recipe.md`](https://github.com/sethshoultes/brain/blob/main/learnings/multi-agent-essay-production-recipe.md) — the source pattern.
+- **Brain learning:** [`multi-agent-essay-production-recipe.md`](https://github.com/sethshoultes/building-with-ai-brain/blob/main/learnings/multi-agent-essay-production-recipe.md) — the source pattern.
 - **Reference posts (the recipe's own outputs):**
   - [Skills as SOPs](https://sethshoultes.com/blog/skills-as-sops.html) (Orwell)
   - [The Recipe That Wrote Itself](https://sethshoultes.com/blog/the-recipe-that-wrote-itself.html) (Vonnegut — the recipe blogging itself)

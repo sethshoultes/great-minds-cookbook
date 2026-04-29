@@ -103,7 +103,7 @@ What makes a recipe useful is the honesty about what broke and the specificity o
 ## Related
 
 - [Great Minds Constellation](https://github.com/sethshoultes/great-minds-constellation) — the marketplace + plugins this cookbook documents
-- The brain learning [`agency-operator-must-redirect-not-pinch-hit`](https://github.com/sethshoultes/brain/blob/main/learnings/agency-operator-must-redirect-not-pinch-hit.md) — when the constellation fails, file an issue, don't pinch-hit
+- The brain learning [`agency-operator-must-redirect-not-pinch-hit`](https://github.com/sethshoultes/building-with-ai-brain/blob/main/learnings/agency-operator-must-redirect-not-pinch-hit.md) — when the constellation fails, file an issue, don't pinch-hit
 
 ## License
 
