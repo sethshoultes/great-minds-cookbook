@@ -1,5 +1,6 @@
 {
   "_comment": "Map of post slug -> author persona used. Append after each multi-agent-essay-production dispatch so last-voice.py can suggest variation. Personas: hemingway, mccarthy, didion, baldwin, morrison, mcphee, wallace, orwell, king, leguin, vonnegut. Use 'unknown' for posts predating this tracking.",
+  "agents-hallucinate-apis": "wallace",
   "the-mouth-was-not-an-ear": "hemingway",
   "relay": "leguin",
   "skills-as-sops": "orwell",
