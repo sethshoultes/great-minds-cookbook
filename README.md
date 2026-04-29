@@ -26,6 +26,7 @@ This pattern is modeled on [Anthropic's claude-cookbooks](https://github.com/ant
 | Recipe | Project type | Plugins exercised | First shipped |
 |---|---|---|---|
 | [regex-explainer](recipes/regex-explainer/) | Single-page static developer tool | great-minds, great-engineers, great-designers, great-authors | [2026-04-28](recipes/regex-explainer/runs/2026-04-28.md) |
+| [multi-agent-essay-production](recipes/multi-agent-essay-production/) | Long-form blog essay (1,000–1,800 words) with original featured image | great-authors, great-minds (Jony Ive) | [2026-04-29](recipes/multi-agent-essay-production/runs/2026-05-07-skills-as-sops.md) |
 
 ### Queued
 
