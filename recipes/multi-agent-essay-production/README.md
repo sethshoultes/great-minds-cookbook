@@ -258,6 +258,29 @@ If the blog repo has a GitHub Action that syncs new posts to a RAG knowledge bas
 
 ---
 
+## Step 8 — Save the author's REPORT BACK observation to the brain
+
+**This is the step that closes the loop.** Every author dispatch returns a "one observation about the topic you noticed during writing that the briefer did not name." That observation is almost always the load-bearing insight in the post. **Don't let it die in chat.**
+
+After commit, do one of two things:
+
+- **If the observation extends an existing brain learning**, edit that learning's file and add the observation as a new section near the top (give it its own H2). Reference the post and date as the source.
+- **If the observation stands on its own**, create a new file at `~/brain/learnings/<slug>.md` with the standard frontmatter (`title`, `date`, `source`, `tags`) and the standard sections (The Lesson, Where this came from / Context, How to Apply, Related). Keep the original sentence verbatim where you can — quoting the author's words is what lets future-you re-find the insight by full-text search.
+
+Then commit the brain repo. The auto-commit Git plugin in Obsidian will push within 10 minutes; for a same-day flow, push immediately.
+
+The recursion this enables: the recipe's diagnostic prompt produces the upgrades to the recipe. Examples from this recipe's own first runs:
+
+| Post | Author | Observation | What we did with it |
+|---|---|---|---|
+| Skills as SOPs | Orwell | "a wrong skill executes the wrong thing in every session that calls it, without complaint, at full speed" | Became the post's load-bearing close. |
+| The Recipe That Wrote Itself | Vonnegut | "the seed must be a claim, not a topic" | Folded into [the brain learning's *hidden prerequisite* section](https://github.com/sethshoultes/brain/blob/main/learnings/multi-agent-essay-production-recipe.md). |
+| What's on the Desk | King | "tools are nouns, lifecycle hooks are verbs" | Became its own brain learning: [hooks-as-temporal-grammar-of-tool-systems](https://github.com/sethshoultes/brain/blob/main/learnings/hooks-as-temporal-grammar-of-tool-systems.md). |
+
+Without this step, the insight only lives in the published prose. With it, the insight becomes reusable across projects and future sessions.
+
+---
+
 ## Pitfalls
 
 ### The seed is a topic, not a claim
