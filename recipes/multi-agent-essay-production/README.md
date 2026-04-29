@@ -318,6 +318,10 @@ The voice flattens. Per `[orchestrator-and-writer-are-different-ai-roles]` in th
 
 ---
 
+## Helper scripts
+
+- [`scripts/draft-brief.py`](scripts/draft-brief.py) — generates ~70% of the author dispatch brief (persona statement, output target, front-matter requirements, READ FIRST list with absolute paths to recent posts, REPORT BACK section). Usage: `./draft-brief.py <slug> <persona> --word-target 1500`. Fill in title/material/structural anchors before dispatching.
+
 ## Companion artifacts
 
 - **Skill (Agent Skill format):** [`set-up-claude-code-with-brain-vault`](https://github.com/sethshoultes/building-with-ai-skills/blob/main/skills/set-up-claude-code-with-brain-vault/SKILL.md) — sister skill (the brain vault is where the source learnings for this recipe live).
